@@ -56,6 +56,12 @@ function App() {
     copy[0] = '여자 코트 추천'; //기존 state를 copy해서 주소가 copy된 주소로 변경되었기 때문에 state 변경이 인식됨 
     setLogoTitle(copy); //기존 state와 신규 state를 비교해서 다르다고 인식되면 리렌더링됨.
   }
+
+  const handleSort = () => {
+    let copy = [...logoTitle];
+    copy.sort();
+    setLogoTitle(copy);
+  }
   /**
    * Destructuring 
    * let num = [1, 2]; //이걸 자주사용해서 변수로 빼고싶다
@@ -71,6 +77,7 @@ function App() {
         <h4 /*style="color : red"*/
           style={{ color: 'red', fontSize: '16px' }}>ReactBlog</h4>
       </div>
+      <button onClick={handleSort}>가나다순 정렬</button>
       <button onClick={handleFirstLogo}>글수정</button>
       <div className="list">
         {/* onClick = {함수명}* : 클릭 시 해당 함수가 실행 됨 ({함수명}에 함수를 직접 넣어도됨
