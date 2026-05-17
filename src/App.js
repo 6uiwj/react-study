@@ -12,9 +12,15 @@ function App() {
     <div className="App">
       {/* 상단 메뉴 만들기 */}
       <div className="black-nav">
-        <h4 /*style="color : red"*/ style={{ color: 'red', fontSize: '16px' }}>블로그임</h4>
+        <h4 /*style="color : red"*/
+          style={{ color: 'red', fontSize: '16px' }}>블로그임</h4>
       </div>
-      <h4> {post} </h4> {/* 중괄호 : 변수에 넣은 데이터를 출력(데이터 바인딩) */}
+      <div className="list">
+        <h4>글제목</h4>
+        <p>2월 17일 발행</p>
+      </div>
+
+      {/*<h4> {post} </h4> {/* 중괄호 : 변수에 넣은 데이터를 출력(데이터 바인딩) */}
     </div>
   );
 }
