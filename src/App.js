@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 
-function App() {
+function App() { //이것도 컴포넌트 
 
   /* 실제 DB에서 가져왔다 가정 */
   //let post = '강남 우동 맛집';
@@ -114,7 +114,7 @@ function App() {
 }
 
 {/* 컴포넌트 만드는 법 */ }
-function Modal() {
+function Modal() { //함수이름 대문자
   {/*function Apps() 바깥쪽에 정의 */ }
   return ( /* return안에 html 담기 */
     /* div를 병렬로 쓰고 싶으면 <> 내용.. </>(fragment문법) 안에 담기*/
@@ -127,7 +127,7 @@ function Modal() {
 }
 
 {/* 컴포넌트 만드는 법2 */ }
-const Modal2 = () => {
+const Modal2 = () => { //변수명 대문자
   return (
     <div className="modal"> {/* 화살표 함수로도 컴포넌트 만들 수 있음 */}
       <h4>제목</h4>
