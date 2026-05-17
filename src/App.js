@@ -1,3 +1,4 @@
+/* eslint-disable */ //터미널 warning mesage 없애기 
 //메인페이지 
 import logo from './logo.svg';
 import './App.css';
@@ -6,8 +7,12 @@ import { useState } from 'react';
 function App() {
 
   /* 실제 DB에서 가져왔다 가정 */
-  let post = '강남 우동 맛집';
-  let [logo, setLogo] = useState('여자 코트 추천');
+  //let post = '강남 우동 맛집';
+  //let [logo, setLogo] = useState('여자 코트 추천');
+  //let [logo2, setLogo2] = useState('강남 우동 맛집');
+  //let [logo3, setLogo3] = useState('파이썬 독학');
+
+  let [logoTitle, setLogoTitle] = useState(['여자 코트 추천', '강남 우동 맛집', '파이썬 독학']);
   // document.querySelector('h4').innerHTML = post; //이렇게 하면 안됨. 리액트는 가상돔을 이용해서 렌더링하기 때문에, 실제 돔에 접근해서 조작하는 것은 권장되지 않음. 대신 state를 이용해서 데이터를 관리해야 함.
 
   //state : 변수 대신 쓰는 데이터 저장공간. useState() : state를 만드는 함수. state는 변경되면 자동으로 리렌더링됨. state는 배열 형태로 반환됨. [state값, state값을 변경하는 함수] 형태로 반환됨. state값을 변경하는 함수는 setState() 형태로 사용됨. 예시 : const [post, setPost] = useState('남자 코트 추천') -> post : state값, setPost : state값을 변경하는 함수. post 값을 변경하려면 setPost('새로운 값') 형태로 사용하면 됨.
@@ -23,7 +28,11 @@ function App() {
   let [a, b] = useState('남자 코트 추천');
   // a : state에 보관했던 자료가 나옴
   // b : state에 보관했던 자료를 변경할 수 있는 함수
+  let [recommend, setRecommend] = useState(0);
 
+  const handleLike = () => {
+    setRecommend(recommend + 1);
+  };
   /**
    * Destructuring 
    * let num = [1, 2]; //이걸 자주사용해서 변수로 빼고싶다
@@ -40,7 +49,15 @@ function App() {
           style={{ color: 'red', fontSize: '16px' }}>ReactBlog</h4>
       </div>
       <div className="list">
-        <h4>{logo}</h4>
+        <h4>{logoTitle[0]} <span onClick={handleLike} className="like-button">👍</span> {recommend} </h4>
+        <p>2월 17일 발행</p>
+      </div>
+      <div className="list">
+        <h4>{logoTitle[1]}</h4>
+        <p>2월 17일 발행</p>
+      </div>
+      <div className="list">
+        <h4>{logoTitle[2]}</h4>
         <p>2월 17일 발행</p>
       </div>
 
