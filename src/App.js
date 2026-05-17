@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       {/* 상단 메뉴 만들기 */}
-      <div class="black-nav">
+      <div className="black-nav">
         <h4>블로그임</h4>
       </div>
     </div>
